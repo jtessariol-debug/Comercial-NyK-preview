@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comercial N&K | Distribución de Abarrotes</title>
+    <meta name="description" content="Comercial N&K - Somos una empresa dedicada a la venta de diversos artículos. Calidad y servicio en República Dominicana.">
+    
+    <!-- Fuentes y Estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+
+        .floating-btn {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Chatbot custom scrollbar */
+        .chat-messages::-webkit-scrollbar {
+            width: 4px;
+        }
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade {
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="text-slate-900">
+
+    <!-- Navegación -->
+    <nav class="glass-nav sticky top-0 z-50 border-b border-slate-100 h-20 flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="https://i.ibb.co/pvj5snJ5/Logo-NYK.jpg" alt="Logo N&K" class="h-12 w-auto rounded-lg shadow-sm">
+                <span class="text-xl font-bold text-blue-900 hidden sm:block">Comercial N&K</span>
+            </a>
+            <div class="flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#inicio" class="hover:text-blue-700 transition-colors">Inicio</a>
+                <a href="#catalogo" class="hover:text-blue-700 transition-colors">Productos</a>
+                <a href="#nosotros" class="hover:text-blue-700 transition-colors">Nosotros</a>
+                <a href="#contacto" class="hover:text-blue-700 transition-colors">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-gradient relative py-24 px-4 overflow-hidden text-white">
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <circle cx="10" cy="10" r="50" fill="white" filter="blur(80px)"></circle>
+                <circle cx="90" cy="90" r="40" fill="white" filter="blur(60px)"></circle>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto relative z-10 text-center lg:text-left grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block bg-blue-800/50 backdrop-blur-md text-blue-200 px-4 py-1.5 rounded-full text-xs font-bold mb-6 uppercase tracking-widest border border-blue-400/20">
+                    Calidad Certificada
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                    Distribución Líder en <br>
+                    <span class="text-blue-300">Abarrotes y Artículos</span>
+                </h1>
+                <p class="text-lg text-blue-100 mb-10 max-w-xl mx-auto lg:mx-0">
+                    Somos una empresa dedicada a la venta de diversos artículos. Llevamos frescura y ahorro directamente a su negocio.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <a href="#catalogo" class="bg-white text-blue-900 px-8 py-4 rounded-xl font-bold shadow-xl hover:bg-blue-50 transition-all transform hover:-translate-y-1">
+                        Ver Catálogo
+                    </a>
+                    <a href="https://wa.me/18095305636" class="bg-blue-800 text-white border border-blue-700 px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all">
+                        Contactar Ventas
+                    </a>
+                </div>
+            </div>
+            <div class="hidden lg:block">
+                <img src="https://i.ibb.co/9kBXF2N6/1.jpg" alt="Featured" class="w-80 h-auto mx-auto rounded-3xl shadow-2xl rotate-3 bg-white p-6 border-8 border-blue-800/30">
+            </div>
+        </div>
+    </section>
+
+    <!-- Buscador -->
+    <div class="max-w-4xl mx-auto px-4 -mt-10 relative z-20">
+        <div class="bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center space-x-4">
+            <div class="flex-1 relative">
+                <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5"></i>
+                <input type="text" id="productSearch" placeholder="¿Qué producto necesita hoy?" class="w-full pl-12 pr-4 py-4 bg-slate-50 border-none rounded-xl focus:ring-2 focus:ring-blue-500 text-lg transition-all outline-none">
+            </div>
+            <button onclick="resetSearch()" class="p-4 text-slate-400 hover:text-blue-600 transition-colors" title="Limpiar búsqueda">
+                <i data-lucide="rotate-ccw"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Catálogo -->
+    <section id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">Catálogo de Productos</h2>
+            <p class="text-slate-500">Precios competitivos y disponibilidad inmediata</p>
+        </div>
+
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Inyectado por JS -->
+        </div>
+
+        <div id="noResults" class="hidden text-center py-20 bg-white rounded-3xl border-2 border-dashed border-slate-200">
+            <i data-lucide="package-search" class="mx-auto w-16 h-16 text-slate-300 mb-4"></i>
+            <h3 class="text-xl font-bold text-slate-800">No encontramos coincidencias</h3>
+            <p class="text-slate-400">Intenta con otro término o consulta vía WhatsApp</p>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="bg-white py-24 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
+                <img src="https://i.ibb.co/pvRR591Y/11.jpg" alt="Local" class="rounded-3xl shadow-2xl relative z-10 w-full object-cover h-[400px]">
+                <div class="absolute -bottom-6 -right-6 bg-blue-900 text-white p-6 rounded-2xl shadow-xl z-20 hidden sm:block">
+                    <p class="text-2xl font-bold">100%</p>
+                    <p class="text-xs uppercase tracking-widest font-semibold opacity-70">Garantizado</p>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6 leading-tight">Dedicados a Servirle Mejor</h2>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                    Somos una empresa dedicada a la venta de diversos artículos. En Comercial N&K entendemos que su negocio necesita socios confiables. 
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="check-circle" class="text-blue-600 w-5 h-5"></i>
+                        <span class="font-semibold text-slate-700">Calidad Garantizada</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="check-circle" class="text-blue-600 w-5 h-5"></i>
+                        <span class="font-semibold text-slate-700">Servicio Excepcional</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="check-circle" class="text-blue-600 w-5 h-5"></i>
+                        <span class="font-semibold text-slate-700">Integridad Comercial</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="check-circle" class="text-blue-600 w-5 h-5"></i>
+                        <span class="font-semibold text-slate-700">Compromiso Local</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <footer id="contacto" class="bg-slate-900 text-slate-400 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <img src="https://i.ibb.co/pvj5snJ5/Logo-NYK.jpg" alt="Logo" class="h-16 w-auto mb-6 rounded-lg grayscale invert opacity-80">
+                    <p class="mb-6 leading-relaxed">Líderes en el mercado de abarrotes de la República Dominicana. Calidad garantizada en cada entrega.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://tr.ee/EepXqhtIpG" target="_blank" class="bg-slate-800 p-3 rounded-xl hover:text-white hover:bg-blue-600 transition-all">
+                            <i data-lucide="external-link"></i>
+                        </a>
+                        <a href="https://tr.ee/lC38IH8FqS" target="_blank" class="bg-slate-800 p-3 rounded-xl hover:text-white hover:bg-blue-600 transition-all">
+                            <i data-lucide="link"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-8 uppercase tracking-widest text-xs">Información</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start space-x-4">
+                            <i data-lucide="phone" class="text-blue-400 mt-1"></i>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold uppercase mb-1">Teléfono</p>
+                                <a href="tel:18095305636" class="text-white text-lg font-bold hover:text-blue-400 transition-colors">1 809-530-5636</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-4">
+                            <i data-lucide="map-pin" class="text-blue-400 mt-1"></i>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold uppercase mb-1">Ubicación</p>
+                                <p class="text-white">Santo Domingo, RD</p>
+                                <a href="https://www.google.com/maps/place/Comercial+N%26K/@18.4583512,-69.99515,17.53z/data=!4m5!3m4!1s0x8ea561cfd99efdeb:0xa630ed9f7a7bff6!8m2!3d18.4585594!4d-69.9928274?shorturl=1" target="_blank" class="text-blue-400 text-sm mt-1 inline-block hover:underline">Ver en Google Maps</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="rounded-3xl overflow-hidden h-64 border-4 border-slate-800 shadow-2xl">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.80436423985!2d-69.99515!3d18.4583512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea561cfd99efdeb%3A0xa630ed9f7a7bff6!2sComercial%20N%26K!5e0!3m2!1ses-419!2sdo!4v1715600000000!5m2!1ses-419!2sdo" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 flex justify-between items-center text-xs font-bold uppercase tracking-widest text-slate-600">
+                <p>&copy; 2024 Comercial N&K</p>
+                <p>Hecho con Excelencia</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botones Flotantes -->
+    <div class="fixed bottom-8 right-8 z-[100] flex flex-col space-y-4">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/18095305636" target="_blank" class="floating-btn bg-[#25D366] text-white p-4 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-2xl">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.01 0-3.991-.51-5.751-1.474l-6.242 1.692zm6.75-4.478l.362.216c1.535.916 3.3 1.398 5.122 1.398 5.404 0 9.801-4.397 9.801-9.801 0-2.618-1.02-5.08-2.871-6.932-1.851-1.852-4.312-2.872-6.93-2.872-5.404 0-9.801 4.397-9.801 9.801 0 1.977.592 3.907 1.713 5.543l.237.347-1.013 3.704 3.793-1.028zm10.742-7.139c-.213-.106-1.261-.622-1.456-.692-.195-.07-.337-.106-.479.106-.142.212-.549.692-.673.832-.124.14-.248.158-.461.052-.213-.106-.9-.332-1.715-1.058-.633-.565-1.061-1.264-1.185-1.476-.124-.212-.013-.327.093-.432.095-.095.213-.248.319-.371.106-.124.142-.212.213-.353.071-.142.035-.265-.018-.371-.053-.106-.479-1.15-.656-1.575-.173-.417-.348-.359-.479-.366-.124-.005-.266-.006-.408-.006-.142 0-.372.053-.567.265-.195.212-.744.727-.744 1.77 0 1.043.762 2.051.868 2.193.106.141 1.5 2.29 3.633 3.21.507.219.904.35 1.213.448.51.162.974.139 1.341.084.409-.061 1.261-.515 1.438-1.011.177-.496.177-.921.124-1.011-.053-.09-.195-.142-.408-.248z"/></svg>
+        </a>
+
+        <!-- Chat AI -->
+        <button id="chatbotToggle" class="floating-btn bg-blue-900 text-white p-4 rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-2xl relative">
+            <i data-lucide="bot" class="w-8 h-8"></i>
+            <span class="absolute -top-1 -right-1 flex h-4 w-4">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-4 w-4 bg-blue-500"></span>
+            </span>
+        </button>
+    </div>
+
+    <!-- Ventana Chatbot -->
+    <div id="chatbotWindow" class="fixed bottom-32 right-8 w-[350px] h-[500px] bg-white rounded-3xl shadow-2xl z-[100] border border-slate-200 hidden flex-col overflow-hidden animate-fade">
+        <div class="bg-blue-900 p-5 text-white flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-800 p-2 rounded-xl"><i data-lucide="bot" class="w-5 h-5"></i></div>
+                <div>
+                    <p class="font-bold text-sm leading-none">Asistente N&K</p>
+                    <p class="text-[10px] opacity-70">En línea ahora</p>
+                </div>
+            </div>
+            <button onclick="toggleChat()" class="hover:bg-blue-800 p-2 rounded-lg transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+        <div id="chatMessages" class="chat-messages flex-1 overflow-y-auto p-5 bg-slate-50 space-y-4 text-sm">
+            <div class="flex justify-start">
+                <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-100 shadow-sm max-w-[85%]">
+                    ¡Hola! Soy el asistente de Comercial N&K. ¿Cómo puedo ayudarte hoy con nuestro catálogo?
+                </div>
+            </div>
+        </div>
+        <div class="p-4 bg-white border-t border-slate-100 flex items-center space-x-2">
+            <input type="text" id="chatInput" placeholder="Pregunta sobre productos..." class="flex-1 bg-slate-100 border-none rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+            <button onclick="sendMessage()" class="bg-blue-600 text-white p-3 rounded-xl hover:bg-blue-700 transition-all transform active:scale-95 shadow-lg shadow-blue-100">
+                <i data-lucide="send" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </div>
+
+    <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+
+    <script type="module">
+        import { GoogleGenAI } from "@google/genai";
+
+        // Configuración de Productos
+        const imageSources = [
+            "https://i.ibb.co/9kBXF2N6/1.jpg", "https://i.ibb.co/0VRNH4gw/2.jpg", "https://i.ibb.co/NgcV4hsX/3.jpg",
+            "https://i.ibb.co/MYg66gt/4.jpg", "https://i.ibb.co/LDMs3rLT/5.jpg", "https://i.ibb.co/ccF3dsvN/6.jpg",
+            "https://i.ibb.co/GQSFKPVR/7.jpg", "https://i.ibb.co/Fbx64tjY/8.jpg", "https://i.ibb.co/DDwH6RDs/9.jpg",
+            "https://i.ibb.co/rGJ08dXH/10.jpg", "https://i.ibb.co/pvRR591Y/11.jpg", "https://i.ibb.co/4R6RVLRy/12.jpg",
+            "https://i.ibb.co/j9ZFnbfq/13.jpg", "https://i.ibb.co/279yrT97/14.jpg", "https://i.ibb.co/N2gHy4DQ/15.jpg",
+            "https://i.ibb.co/sdT1tw0z/16.jpg", "https://i.ibb.co/21y5pwpc/17.jpg", "https://i.ibb.co/4g3BpdNS/18.jpg",
+            "https://i.ibb.co/5XVrjjt7/19.jpg", "https://i.ibb.co/qM9Y9rPL/20.jpg", "https://i.ibb.co/SXfYWqyt/21.jpg",
+            "https://i.ibb.co/LzVHsxnL/22.jpg", "https://i.ibb.co/fzs0Y1CG/23.jpg", "https://i.ibb.co/B2RzgBKz/24.jpg",
+            "https://i.ibb.co/zjKfx3C/25.jpg", "https://i.ibb.co/Rk8bYRxR/26.jpg", "https://i.ibb.co/1tPv6PtL/27.jpg",
+            "https://i.ibb.co/1fKCWWFV/28.jpg", "https://i.ibb.co/dJ5h78dW/29.jpg", "https://i.ibb.co/XfYstKJ0/30.jpg"
+        ];
+
+        const products = imageSources.map((url, i) => ({
+            id: i + 1,
+            name: `Producto Abarrote #${i + 1}`,
+            sku: `NYK-${(i + 1).toString().padStart(3, '0')}`,
+            img: url
+        }));
+
+        const grid = document.getElementById('productGrid');
+        const search = document.getElementById('productSearch');
+        const noResults = document.getElementById('noResults');
+
+        function render(list) {
+            grid.innerHTML = '';
+            if (list.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            }
+            noResults.classList.add('hidden');
+            
+            list.forEach(p => {
+                const div = document.createElement('div');
+                div.className = 'product-card bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col animate-fade';
+                div.innerHTML = `
+                    <div class="aspect-square bg-slate-50 p-6 flex items-center justify-center overflow-hidden">
+                        <img src="${p.img}" alt="${p.name}" class="w-full h-full object-contain" loading="lazy">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <p class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">Abarrotes</p>
+                        <h3 class="font-bold text-slate-900 mb-2 truncate" title="${p.name}">${p.name}</h3>
+                        <p class="text-xs text-slate-400 mb-6">SKU: ${p.sku}</p>
+                        <div class="mt-auto">
+                            <a href="https://wa.me/18095305636?text=Hola, quiero información sobre: ${p.name} (${p.sku})" target="_blank" 
+                               class="w-full flex items-center justify-center space-x-2 bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-blue-900 transition-all shadow-lg shadow-slate-100 active:scale-95">
+                                <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                                <span>Consultar Precio</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+            lucide.createIcons();
+        }
+
+        render(products);
+
+        search.addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            const filtered = products.filter(p => p.name.toLowerCase().includes(val) || p.sku.toLowerCase().includes(val));
+            render(filtered);
+        });
+
+        window.resetSearch = () => {
+            search.value = '';
+            render(products);
+        };
+
+        // Chatbot Logic
+        window.toggleChat = () => {
+            const win = document.getElementById('chatbotWindow');
+            win.classList.toggle('hidden');
+            if (!win.classList.contains('hidden')) {
+                document.getElementById('chatInput').focus();
+            }
+        };
+
+        document.getElementById('chatbotToggle').onclick = window.toggleChat;
+
+        window.sendMessage = async () => {
+            const input = document.getElementById('chatInput');
+            const messages = document.getElementById('chatMessages');
+            const text = input.value.trim();
+            if (!text) return;
+
+            // User bubble
+            const uDiv = document.createElement('div');
+            uDiv.className = 'flex justify-end';
+            uDiv.innerHTML = `<div class="bg-blue-600 text-white p-3 rounded-2xl rounded-tr-none shadow-sm max-w-[85%]">${text}</div>`;
+            messages.appendChild(uDiv);
+            input.value = '';
+            messages.scrollTop = messages.scrollHeight;
+
+            // Typing...
+            const bDiv = document.createElement('div');
+            bDiv.className = 'flex justify-start typing';
+            bDiv.innerHTML = `<div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-100 shadow-sm flex items-center space-x-2">
+                <div class="w-1 h-1 bg-slate-400 rounded-full animate-bounce"></div>
+                <div class="w-1 h-1 bg-slate-400 rounded-full animate-bounce [animation-delay:0.2s]"></div>
+                <div class="w-1 h-1 bg-slate-400 rounded-full animate-bounce [animation-delay:0.4s]"></div>
+            </div>`;
+            messages.appendChild(bDiv);
+            messages.scrollTop = messages.scrollHeight;
+
+            try {
+                const ai = new GoogleGenAI({ apiKey: 'API_KEY' }); // El sistema inyectará la clave real
+                const response = await ai.models.generateContent({
+                    model: "gemini-3-flash-preview",
+                    contents: text,
+                    config: {
+                        systemInstruction: "Eres el asistente de Comercial N&K. Somos una empresa dedicada a la venta de diversos artículos y abarrotes en Santo Domingo. Tel: 1 809-530-5636. El catálogo tiene 30 productos. Responde de forma amable, profesional y corta. Si preguntan por precios, diles que consulten al WhatsApp."
+                    }
+                });
+
+                messages.querySelector('.typing').remove();
+                const aiDiv = document.createElement('div');
+                aiDiv.className = 'flex justify-start animate-fade';
+                aiDiv.innerHTML = `<div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-100 shadow-sm max-w-[85%]">${response.text}</div>`;
+                messages.appendChild(aiDiv);
+            } catch (e) {
+                console.error(e);
+                messages.querySelector('.typing')?.remove();
+                const errDiv = document.createElement('div');
+                errDiv.className = 'flex justify-start';
+                errDiv.innerHTML = `<div class="bg-red-50 text-red-600 p-3 rounded-2xl rounded-tl-none border border-red-100 max-w-[85%]">Hubo un error al procesar tu duda. Contacta al 1 809-530-5636.</div>`;
+                messages.appendChild(errDiv);
+            }
+            messages.scrollTop = messages.scrollHeight;
+        };
+
+        document.getElementById('chatInput').onkeypress = (e) => e.key === 'Enter' && window.sendMessage();
+
+        // Inicializar iconos
+        lucide.createIcons();
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
